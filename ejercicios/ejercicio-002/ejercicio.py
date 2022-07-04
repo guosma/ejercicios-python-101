@@ -5,7 +5,7 @@ de los parámetros pasados a y b.
 
 
 def suma(a, b):
-    pass
+    return a+b
 
 
 # NO BORRAR LAS LINEAS QUE SIGUEN
