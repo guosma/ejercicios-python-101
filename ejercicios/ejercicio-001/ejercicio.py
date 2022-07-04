@@ -3,9 +3,8 @@ Completar la funcion para que devuelva "Hola NOMBRE"
 segun el "nombre" (string) que se pasa como parametro.
 """
 
-
 def hola(nombre):
-    pass
+    return f"Hola {nombre}"
 
 
 # NO BORRAR LAS LINEAS QUE SIGUEN
