@@ -5,21 +5,17 @@ Tarea: Corregir el error de la función para que devuelva el resultado correcto
 """
 
 
-def contar_palabras(frase):
+def contar_palabras(frase:str)->dict:
     """ 
     Esta funcion toma una frase y devuelve un diccionario
     con una llave por cada palabra y un valor igual a la
     cantidad de veces que aparece en la frase
     """
     palabras = frase.split()
+    claves = set(frase.split())
     resultados = {}
-    for palabra in palabras:
-        if palabra in resultados.keys():
-            # si existe, sumarle 1
-            resultados[palabra] += 1
-        else:
-            # si no existe, inicializarla
-            resultados[palabra] = 0
+    for clave in claves:
+        resultados[clave] = palabras.count(clave)
     return resultados
 
 
@@ -36,5 +32,8 @@ def contar_palabras(frase):
 
 f1 = contar_palabras("Hola dijo Juan. Hola dijo pedro")
 assert f1['Hola'] == 2, f"La función devolvió {f1['Hola']} y esperamos 2"
+
+f2 = contar_palabras("Hola dijo Juan. Hola dijo pedro. Hola")
+assert f2['Hola'] == 3, f"La función devolvió {f1['Hola']} y esperamos 3"
 
 print('Ejercicio terminado OK')
