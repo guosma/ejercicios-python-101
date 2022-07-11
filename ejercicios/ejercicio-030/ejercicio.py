@@ -19,7 +19,7 @@ def contar_palabras(frase):
             resultados[palabra] += 1
         else:
             # si no existe, inicializarla
-            resultados[palabra] = 0
+            resultados[palabra] = 1
     return resultados
 
 
@@ -37,4 +37,9 @@ def contar_palabras(frase):
 f1 = contar_palabras("Hola dijo Juan. Hola dijo pedro")
 assert f1['Hola'] == 2, f"La función devolvió {f1['Hola']} y esperamos 2"
 
+f2 = contar_palabras("Hola dijo Juan. Hola dijo pedro. Hola")
+assert f2['Hola'] == 3, f"La función devolvió {f1['Hola']} y esperamos 3"
+
 print('Ejercicio terminado OK')
+
+
