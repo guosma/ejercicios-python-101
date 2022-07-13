@@ -33,7 +33,7 @@ def contar_si(lista, propiedad, valor):
     """
     contador = 0
     for elemento in lista:
-        if elemento[propiedad] == valor:
+        if elemento.get(propiedad) == valor:
             contador += 1
 
     return contador
