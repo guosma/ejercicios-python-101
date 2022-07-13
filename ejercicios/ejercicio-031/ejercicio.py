@@ -33,9 +33,11 @@ def contar_si(lista, propiedad, valor):
     """
     contador = 0
     for elemento in lista:
-        if elemento[propiedad] == valor:
-            contador += 1
-
+        try:
+            if elemento.get(propiedad) == valor:
+                contador += 1
+        except:
+            pass
     return contador
 
 # ------------------------------------------------------------------------
@@ -63,6 +65,6 @@ assert contar_si(lista, "genero", "M") == 3
 assert contar_si(lista, "genero", "F") == 4
 assert contar_si(lista, "nombre", "Juana") == 2
 assert contar_si(lista, "apellido", "Gomez") == 1
-assert contar_si(lista, "apellido", "Perez") == 0
+assert contar_si(lista, "apellido", "Perez") == 0 
 
 print('Ejercicio terminado OK')
