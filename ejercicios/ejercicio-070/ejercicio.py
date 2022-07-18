@@ -15,8 +15,11 @@ def multisuma(*args):
     Dada una serie de parametros, los suma y devuelve el resultado.
     """
     resultado = 0
-    for arg in args:
-        resultado += arg
+    for index,arg in enumerate(args):
+        if args[index-1] == 0 and index > 0:
+           resultado += arg * 2 
+        else:
+            resultado += arg
     return resultado
 
 
@@ -30,7 +33,7 @@ def multisuma(*args):
 # Si usas GitHub (o similares) podes hacer una nueva rama con esta solución,
 #   crear un "pull request" y solicitar revision de un tercero.
 
-assert multisuma(3, 4, 5) == 12
+assert multisuma(3, 4, 5,0) == 12
 assert multisuma(3, 1, 5) == 9
 assert multisuma(3, 1, -5) == -1
 assert multisuma(1, 2, 0, 1) == 5
