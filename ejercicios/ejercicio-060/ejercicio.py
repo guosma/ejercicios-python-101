@@ -2,18 +2,18 @@
 Tarea: escribir la función "devolver_mayor_par" para que
 devuelva el mayor numero par de la "lista" pasada como parámetro
 """
-
-
 def es_par(n):
     """
     Dado un numero "n", indicar si es par (mayor a cero) o no
     """
     return n > 0 and n % 2 == 0
 
-
 def devolver_mayor_par(lista):
-    pass
-
+    mayor = float("-inf")
+    for numero in lista:
+        if es_par(numero) and numero > mayor:
+            mayor = numero
+    return mayor
 
 # ------------------------------------------------------------------------
 # NO BORRAR O MODIFICAR LAS LINEAS QUE SIGUEN
