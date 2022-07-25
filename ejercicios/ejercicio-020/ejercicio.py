@@ -11,9 +11,13 @@ from hashlib import new
 def cambia_vocales(frase:str, vocal="a") -> str:
     
     vocales = ['a','e','i','o','u']
+    vocales_mayusculas = ['A','E','I','O','U']
+    vocal_mayuscula = vocal.upper()
     
     if vocal in vocales:
         vocales.remove(vocal)
+    if vocal_mayuscula in vocal_mayuscula:
+        vocales_mayusculas.remove(vocal_mayuscula)
 
     new_frase = frase
     
@@ -21,14 +25,15 @@ def cambia_vocales(frase:str, vocal="a") -> str:
 
         if letra in vocales:
             new_frase = new_frase.replace(letra,vocal)
-    
+        if letra in vocales_mayusculas:
+            new_frase = new_frase.replace(letra,vocal_mayuscula)
     return new_frase
-
 
 # NO BORRAR LAS LINEAS QUE SIGUEN
 # Una vez terminada la funcion ejecutar este archivo
 # Si se ve la leyenda 'Ejercicio terminado OK' esta listo, crear un PR 
 
+assert cambia_vocales("PEPEpe", "i") == "PIPIpi"
 assert cambia_vocales("hola") == "hala"
 assert cambia_vocales("Juan Carlos") == "Jaan Carlas"
 assert cambia_vocales("Pepito", "e") == "Pepete"
