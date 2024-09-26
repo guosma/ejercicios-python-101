@@ -33,8 +33,9 @@ def contar_si(lista, propiedad, valor):
     """
     contador = 0
     for elemento in lista:
-        if elemento[propiedad] == valor:
-            contador += 1
+        if propiedad in elemento:
+            if elemento[propiedad] == valor:
+                contador += 1
 
     return contador
 
@@ -58,6 +59,7 @@ lista = [
     {"genero": "F", "nombre": "Juana"},
     {"genero": "F", "nombre": "Victoria"}
 ]
+
 
 assert contar_si(lista, "genero", "M") == 3
 assert contar_si(lista, "genero", "F") == 4
