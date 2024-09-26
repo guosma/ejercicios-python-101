@@ -4,8 +4,8 @@ letra de la "palabra" (string) que se pasa como parametro.
 """
 
 
-def tercera_letra(palabra):
-    pass
+def tercera_letra(palabra:str) -> str:
+    return palabra[2]
 
 
 # ------------------------------------------------------------------------
@@ -18,6 +18,8 @@ def tercera_letra(palabra):
 # Si usas GitHub (o similares) podes hacer una nueva rama con esta solución,
 #   crear un "pull request" y solicitar revision de un tercero.
 
+
+print(tercera_letra("hola"))
 
 assert tercera_letra("hola") == "l"
 assert tercera_letra("Es facil") == " "
